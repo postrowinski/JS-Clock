@@ -43,6 +43,7 @@ document.addEventListener('DOMContentLoaded', function () {
         hours.style.transform = `rotate(${hourDegre}deg)`;
         removeTrans(hourDegre, 12, hours);
     }
-
+    
+    clock();
     setInterval(clock, 1000);
 });
