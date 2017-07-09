@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
           getMinutesGrandier = getComputedStyle(minutes).backgroundImage,
           getHoursGrandier = getComputedStyle(hours).backgroundImage,
           setMinutesGrandier = `linear-gradient(-90deg, ${randomizeColor()} 80%, transparent 20%)`,
-          setHoursGrandier = `linear-gradient(-90deg, ${randomizeColor()} 80%, transparent 20%)`;
+          setHoursGrandier = `linear-gradient(-90deg, ${randomizeColor()} 60%, transparent 40%)`;
     
     //Remove transition when any pointer it is on top (90 deg)
     function removeTrans(selectorDeg, number, selector) {
@@ -68,7 +68,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
     }
       
     //IFFE Randomize all starting pointer color
-    (function () {
+    ( () => {
         second.style.background = randomizeColor();
         minutes.style.backgroundImage = setMinutesGrandier;
         hours.style.backgroundImage = setHoursGrandier;
@@ -76,6 +76,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
     
     //invoke clock function to set degre all pointers after webpage is loaded
     clock();
+    
     //invoke clock function for every second to change time (all three pointers) 
     setInterval(clock, 1000);
 });
